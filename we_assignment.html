@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavani Chalasani</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            margin: 10px auto 0;
+        }
+
+        body,
+        p,
+        ul {
+            font-size: 1.25rem;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            background-color: #f8e7fe;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible-content {
+            display: none;
+            font-size: 1.25rem;
+            margin-top: 10px;
+        }
+
+        h2,
+        h3 {
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            color: #000000;
+            transition: color 0.3s ease;
+        }
+
+        h2:hover,
+        h3:hover {
+            color: #c74eff;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+        }
+
+        nav {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            background-color: #f8e7fe;
+        }
+
+        nav h2::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            margin: 10px auto 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 5px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            padding: 5px 10px;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #c74eff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .toc-h2 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .toc-h3 {
+            font-size: 1.5rem;
+            margin-left: 20px;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><b>Bhavani Chalasani</b></h1>
+
+    <nav>
+        <h2>Table of Contents</h2>
+        <ul id="table-of-contents"></ul>
+    </nav>
+
+    <section>
+        <h2 id="early-life" onclick="toggleContent('early-life-content')">Early Life</h2>
+        <div id="early-life-content" class="collapsible-content">
+            <p>Bhavani Chalasani was born in the Bay Area, California. She moved to Hyderabad, India at the age of nine.
+                She studied in Phoenix Greens School of Learning until 10th class and Dehli Public School, Hyderabad
+                until 12th. She currently studies at the International Institute of Information Technology, Hyderabad.
+                Growing up, her hobbies included chess and classical dancing. Her current hobbies include baking,
+                reading crime novels and watching thriller movies. She is from Vijayawada, Andhra Pradesh and is fluent
+                in both English and Telugu.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 id="projects" onclick="toggleContent('projects-content')">Projects</h2>
+        <div id="projects-content" class="collapsible-content">
+            <section>
+                <h3 id="nocturne" onclick="toggleContent('nocturne-content')">Nocturne</h3>
+                <div id="nocturne-content" class="collapsible-content">
+                    <p>She implemented a website, called Nocturne, which was based off of the idea of IMDB for music.
+                        The website allows users to search for songs, preview audio snippets, rate songs, and add songs
+                        to their playlist.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 id="sheguard" onclick="toggleContent('sheguard-content')">SheGuard</h3>
+                <div id="sheguard-content" class="collapsible-content">
+                    <p>She worked on the app SheGuard, which is an app that has a button to be pressed whenever a user
+                        feels like they're in danger. On pressing the button, all the user's emergency contacts will be
+                        alerted and will be sent the user's current location. The user will additionally receive the
+                        path to the nearest populated area/police station.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 id="translation" onclick="toggleContent('translation-content')">Language Translation</h3>
+                <div id="translation-content" class="collapsible-content">
+                    <p>She began the implementation of a machine learning model that translates English sentences to
+                        French. This is still in progress as of October of 2024.</p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section>
+        <h2 id="accolades" onclick="toggleContent('accolades-content')">Accolades</h2>
+        <div id="accolades-content" class="collapsible-content">
+            Some of her accolades are as follows:
+            <ul>
+                <li>Dean's List 1 in IIITH for the year of 2023-2024</li>
+                <li>International English Olympiad state gold medallist for the years 2016, 2017, and 2018</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+
+        function generateTOC() {
+            const toc = document.getElementById('table-of-contents');
+            const headings = document.querySelectorAll('h2, h3');
+
+            headings.forEach((heading, index) => {
+
+                if (heading.textContent === 'Table of Contents') return;
+
+
+                const id = heading.id || `heading-${index}`;
+                heading.id = id;
+
+                const listItem = document.createElement('li');
+                const anchor = document.createElement('a');
+
+                anchor.textContent = heading.textContent;
+                anchor.href = `#${id}`;
+
+                if (heading.tagName === 'H2') {
+                    anchor.className = 'toc-h2';
+                } else if (heading.tagName === 'H3') {
+                    anchor.className = 'toc-h3';
+                }
+
+                listItem.appendChild(anchor);
+                toc.appendChild(listItem);
+            });
+        }
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', generateTOC);
+    </script>
+</body>
+
+</html>
